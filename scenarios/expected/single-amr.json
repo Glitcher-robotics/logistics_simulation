@@ -1,0 +1,9 @@
+{
+  "scenarioId": "single-amr",
+  "completedTasks": 3,
+  "unfinishedTasks": 0,
+  "distanceMetres": 146,
+  "elapsedSeconds": 142.666666666667,
+  "completionTimes": [42, 92.333333333333, 142.666666666667],
+  "tolerance": 0.000001
+}

@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.png binary
+*.glb binary
+*.dwg binary
+*.dxf text eol=lf

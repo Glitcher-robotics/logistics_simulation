@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "single-amr",
+  "name": "Warehouse A · 단일 AMR 운반",
+  "units": "m",
+  "layout": {
+    "width": 32,
+    "depth": 24,
+    "racks": [
+      { "id": "rack-a", "x": 10, "z": 5.5, "width": 5.5, "depth": 2.4, "height": 4.4 },
+      { "id": "rack-b", "x": 18, "z": 5.5, "width": 5.5, "depth": 2.4, "height": 4.4 },
+      { "id": "rack-c", "x": 25, "z": 5.5, "width": 4, "depth": 2.4, "height": 4.4 },
+      { "id": "rack-d", "x": 10, "z": 18, "width": 5.5, "depth": 2.4, "height": 4.4 },
+      { "id": "rack-e", "x": 18, "z": 18, "width": 5.5, "depth": 2.4, "height": 4.4 }
+    ]
+  },
+  "nodes": [
+    { "id": "home", "name": "대기 위치", "x": 3, "z": 3 },
+    { "id": "west", "name": "서측 통로", "x": 3, "z": 12 },
+    { "id": "pickup", "name": "상차", "x": 10, "z": 12 },
+    { "id": "center", "name": "중앙 통로", "x": 19, "z": 12 },
+    { "id": "east", "name": "동측 통로", "x": 28, "z": 12 },
+    { "id": "dropoff", "name": "하차", "x": 28, "z": 20 }
+  ],
+  "edges": [
+    { "from": "home", "to": "west" },
+    { "from": "west", "to": "pickup" },
+    { "from": "pickup", "to": "center" },
+    { "from": "center", "to": "east" },
+    { "from": "east", "to": "dropoff" }
+  ],
+  "robot": {
+    "id": "AMR-01",
+    "startNode": "home",
+    "speed": 1.2,
+    "loadSeconds": 4,
+    "unloadSeconds": 3,
+    "width": 0.85,
+    "length": 1.15,
+    "height": 0.42
+  },
+  "tasks": [
+    { "id": "MOVE-001", "releaseAt": 0, "pickup": "pickup", "dropoff": "dropoff" },
+    { "id": "MOVE-002", "releaseAt": 20, "pickup": "pickup", "dropoff": "dropoff" },
+    { "id": "MOVE-003", "releaseAt": 60, "pickup": "pickup", "dropoff": "dropoff" }
+  ]
+}
